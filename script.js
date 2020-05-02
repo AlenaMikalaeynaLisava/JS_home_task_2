@@ -87,7 +87,7 @@ for(let i=0; i<GroupOfStudents.length; i++){
     for(let j=0; j<GroupOfStudents[i]["Grades"].length;j++){
       sum=sum+GroupOfStudents[i]["Grades"][j];
     }
-    if ((sum/GroupOfStudents[i]["Grades"].length<3)&&(GroupOfStudents[i]["Age"]<=27)&&(GroupOfStudents[i]["Age"]>=18)&&(GroupOfStudents[i]["Gender"]==="male")){
+    if ((sum/GroupOfStudents[i]["Grades"].length<3)&&(GroupOfStudents[i]["Age"]<27)&&(GroupOfStudents[i]["Age"]>=18)&&(GroupOfStudents[i]["Gender"]==="male")){
         GroupOfStudents[i].isReadyForArmy="true";
         delete GroupOfStudents[i].Grades;
         delete GroupOfStudents[i].Course;
