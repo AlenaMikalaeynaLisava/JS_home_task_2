@@ -9,7 +9,7 @@ let Student1={
 let Student2={
     FirstName:"Mikhael",
     LastName:"Sobolev",
-    Age:17,
+    Age:27,
     Grades:[1,3,3,3,2],
     Course:1,
     Gender:"male",
