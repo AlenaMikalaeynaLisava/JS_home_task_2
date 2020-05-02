@@ -2,7 +2,7 @@ let Student1={
     FirstName:"Boris",
     LastName:"Vasiliev",
     Age:18,
-    Grades:[1,2,3,4,5],
+    Grades:[1,5,3,4,1],
     Course:1,
     Gender:"male",
 };
@@ -10,7 +10,7 @@ let Student2={
     FirstName:"Mikhael",
     LastName:"Sobolev",
     Age:17,
-    Grades:[5,3,3,3,2],
+    Grades:[1,3,3,3,2],
     Course:1,
     Gender:"male",
 };
@@ -18,7 +18,7 @@ let Student3={
     FirstName:"Viktoria",
     LastName:"Von",
     Age:20,
-    Grades:[4,5,3,4,5],
+    Grades:[0,5,3,0,5],
     Course:3,
     Gender:"female",
 };
@@ -34,7 +34,7 @@ let Student5={
     FirstName:"Ivan",
     LastName:"Smirnov",
     Age:22,
-    Grades:[2,2,4,1,4],
+    Grades:[2,5,4,5,4],
     Course:5,
     Gender:"male",
 };
@@ -55,12 +55,12 @@ let Student7={
     Gender:"female",
 };
 let Student8={
-    FirstName:"Mirra",
+    FirstName:"Mirriz",
     LastName:"Hama",
     Age:22,
-    Grades:[5,5,4,3,4],
+    Grades:[3,0,4,3,4],
     Course:5,
-    Gender:"female",
+    Gender:"male",
 };
 let Student9={
     FirstName:"Dzimitrius",
@@ -84,10 +84,10 @@ let sum=0;
 //console.log(GroupOfStudents);
 for(let i=0; i<GroupOfStudents.length; i++){
     let sum=0;
-    for(let j=0; j<5;j++){
+    for(let j=0; j<GroupOfStudents[i]["Grades"].length;j++){
       sum=sum+GroupOfStudents[i]["Grades"][j];
     }
-    if ((sum/5<3)&&(GroupOfStudents[i]["Age"]<=27)&&(GroupOfStudents[i]["Age"]>=18)&&(GroupOfStudents[i]["Gender"]==="male")){
+    if ((sum/GroupOfStudents[i]["Grades"].length<3)&&(GroupOfStudents[i]["Age"]<=27)&&(GroupOfStudents[i]["Age"]>=18)&&(GroupOfStudents[i]["Gender"]==="male")){
         GroupOfStudents[i].isReadyForArmy="true";
         delete GroupOfStudents[i].Grades;
         delete GroupOfStudents[i].Course;
@@ -96,11 +96,9 @@ for(let i=0; i<GroupOfStudents.length; i++){
 }
 
 let Army=[];
-let k=0;
 for(let i=0; i<GroupOfStudents.length; i++){
     if (GroupOfStudents[i].isReadyForArmy==="true"){
-            Army[k]=GroupOfStudents[i];
-            k++;
+            Army.push(GroupOfStudents[i]);
     }
 }
 console.log(Army);
